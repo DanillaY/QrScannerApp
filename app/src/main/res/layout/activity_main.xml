@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/grad_anim"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main_layout">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        app:cardCornerRadius="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:elevation="10dp"
+        android:id="@+id/CardLogo">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/appimage"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/idLogo"
+            ></ImageView>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1.6"
+        android:id="@+id/TVHeading"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/CardLogo"
+        android:layout_centerHorizontal="true"
+        android:text="Scanner for QrViewer"
+        android:gravity="center"
+        android:textColor="#ac2bb5"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        ></TextView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_below="@+id/TVHeading"
+        android:layout_marginTop="30dp"
+        android:id="@+id/StartScanningBtn"
+        android:text="Отсканировать qr"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:backgroundTint="#ac2bb5"
+        android:textColor="@color/white"
+        ></Button>
+
+
+</RelativeLayout>

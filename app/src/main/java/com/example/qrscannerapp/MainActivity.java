@@ -1,11 +1,8 @@
 package com.example.qrscannerapp;
 
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.drawable.AnimatedImageDrawable;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -18,8 +15,22 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.MalformedInputException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -40,17 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drawable.setExitFadeDuration(4000);
         drawable.start();
 
-        // referencing and initializing
-        // the button and textviews
         scanBtn = findViewById(R.id.StartScanningBtn);
-
-        // adding listener to the button
         scanBtn.setOnClickListener(this);
     }
     public void onClick(View v) {
-        // we need to create the object
-        // of IntentIntegrator class
-        // which is the class of QR library
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
         intentIntegrator.setPrompt("Scan a barcode or QR Code");
         intentIntegrator.setOrientationLocked(true);
@@ -64,15 +68,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        // if the intentResult is null then
-        // toast a message as "cancelled"
         if (intentResult != null) {
             if (intentResult.getContents() == null) {
                 Toast.makeText(getBaseContext(), "Cancelled", Toast.LENGTH_SHORT).show();
             } else {
-                // if the intentResult is not null we'll set
-                // the content and format of scan message
-                Toast.makeText(getBaseContext(), "Qr has been scanned \n Content: "+ intentResult.getContents(), Toast.LENGTH_SHORT).show();
+
+                //Toast.makeText(getBaseContext(), "Qr has been scanned \n Content: "+ intentResult.getContents(), Toast.LENGTH_SHORT).show();
+                //String a = ApiRequest.GetResponse("https://jsonplaceholder.typicode.com/todos/1",Request.Method.GET,this);
+
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

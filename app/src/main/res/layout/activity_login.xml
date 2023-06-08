@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/grad_anim"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1.6"
+        android:id="@+id/SignIn"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:text="Sign in"
+        android:gravity="center"
+        android:textColor="#ac2bb5"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SignIn"
+            android:layout_marginTop="120dp"
+            android:hint="Login"
+            android:textColorHint="#ac2bb5"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:id="@+id/Login"
+            android:drawableLeft="@drawable/baseline_person_outline_24"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Login"
+        android:layout_marginTop="50dp"
+        android:hint="Password"
+        android:textColorHint="#ac2bb5"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:drawableLeft="@drawable/baseline_lock_open_24"
+        android:id="@+id/Password"/>
+
+    <Button
+        android:id="@+id/LoginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Password"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="#ac2bb5"
+        android:onClick="onClick"
+        android:text="Confirm"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+</RelativeLayout>
